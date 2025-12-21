@@ -12,7 +12,6 @@ dist
 dist-ssr
 *.local
 .env
-/src/pages/Dashboard/AddService
 
 /src/pages/Dashboard/DecoratorEarningSummary
 /src/pages/Dashboard/MyAssignProjects
