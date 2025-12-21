@@ -15,7 +15,6 @@ dist-ssr
 /src/components 
 /src/hooks
 /src/pages/Dashboard
-/src/pages/auth
 /src/pages/Booking
 /src/pages/Decorator
 /src/pages/map
