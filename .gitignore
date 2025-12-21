@@ -14,7 +14,6 @@ dist-ssr
 .env
 
 /src/pages/Dashboard/DecoratorEarningSummary
-/src/pages/Dashboard/MyAssignProjects
 
 
 
