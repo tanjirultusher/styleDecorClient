@@ -15,7 +15,6 @@ dist-ssr
 /src/components 
 /src/hooks
 /src/pages
-/src/firebase
 /src/routes
 /src/layouts
 
