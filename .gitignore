@@ -14,7 +14,13 @@ dist-ssr
 .env
 /src/components 
 /src/hooks
-/src/pages
+/src/pages/Dashboard
+/src/pages/auth
+/src/pages/Booking
+/src/pages/Decorator
+/src/pages/map
+/src/pages/services
+/src/pages/Home
 /src/routes
 /src/layouts
 
