@@ -49,8 +49,8 @@ const NavBar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/" className="px-4 py-2 text-md font-semibold">
-          ABOUT
+        <NavLink to="/consultation" className="px-4 py-2 text-md font-semibold">
+          CONSULTATION
         </NavLink>
       </li>
 

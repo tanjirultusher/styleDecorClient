@@ -35,6 +35,7 @@ const Decorators = () => {
       name: user?.displayName,
       email: user?.email,
       region: data.region,
+      photoURL: user?.photoURL,
       district: data.district,
       phone: data.phone,
       specialty: data.specialty,
@@ -72,6 +73,13 @@ const Decorators = () => {
         <input
           type="text"
           value={user?.displayName || ""}
+          readOnly
+          className="input input-bordered w-full"
+        />
+        <label className="label">Photo URL</label>
+        <input
+          type="text"
+          value={user?.photoURL || ""}
           readOnly
           className="input input-bordered w-full"
         />

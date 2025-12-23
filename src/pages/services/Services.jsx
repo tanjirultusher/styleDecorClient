@@ -18,7 +18,8 @@ const Services = () => {
   }
   return (
     <div className="mb-10 px-6">
-      <h2 className="text-4xl font-semibold text-center mt-6 mb-4">
+      
+      <h2 className="text-3xl md:text-4xl font-bold text-[#062416] my-6 text-center">
         Our Services
       </h2>
 
@@ -31,7 +32,7 @@ const Services = () => {
             <figure className="px-10 pt-10">
               <img
                 src={
-                  service.images[0] || "https://i.ibb.co/4pDNDk1/default.jpg"
+                  service.images|| "https://i.ibb.co/4pDNDk1/default.jpg"
                 }
                 alt={service.serviceTitle}
                 className="rounded-xl h-56 w-full object-cover"

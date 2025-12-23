@@ -2,7 +2,7 @@ import React from "react";
 import { CiDeliveryTruck } from "react-icons/ci";
 import { FaRegCreditCard, FaUser, FaCalendarCheck } from "react-icons/fa6";
 import { FaCheckCircle, FaPlus, FaUserPlus } from "react-icons/fa";
-import { MdCalendarToday, MdSchedule, MdAssignment } from "react-icons/md";
+import { MdCalendarToday, MdSchedule, MdAssignment, MdEvent } from "react-icons/md";
 import { Link, NavLink, Outlet } from "react-router";
 import useRole from "../hooks/useRole";
 
@@ -121,6 +121,18 @@ const DashboardLayout = () => {
                     <FaPlus />
                     <span className="is-drawer-close:hidden">
                       Add Service
+                    </span>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+                    data-tip="Appointments"
+                    to="/dashboard/appointments"
+                  >
+                    <MdEvent />
+                    <span className="is-drawer-close:hidden">
+                      Appointments
                     </span>
                   </NavLink>
                 </li>

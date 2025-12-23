@@ -73,9 +73,10 @@ const AssignDecorators = () => {
 
   return (
     <div className="p-6">
-      <h2 className="text-2xl font-semibold mb-6">
+      <h2 className="text-3xl md:text-4xl font-bold text-[#062416] my-6">
         Assign Decorators: {bookings.length} Pending
       </h2>
+      
 
       <div className="overflow-x-auto shadow-lg rounded-xl">
         <table className="table table-zebra w-full text-center">

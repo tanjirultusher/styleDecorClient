@@ -20,7 +20,6 @@ const ServiceDetail = () => {
       return res.data;
     },
   });
-  console.log(service);
 
   if (isLoading) {
     return <Loading />;
@@ -43,42 +42,36 @@ const ServiceDetail = () => {
         {service.description}
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {service.images?.map((img, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition"
-          >
-            <img
-              src={img}
-              alt={`service-${index}`}
-              className="w-full h-72 object-cover"
-            />
+      {/* Single Card with One Image */}
+      <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition max-w-4xl mx-auto">
+        <img
+          src={service.images}
+          alt={service.serviceTitle}
+          className="w-full h-96 object-cover"
+        />
 
-            <div className="p-5 flex items-center justify-between">
-              <div>
-                <p className="text-sm text-gray-500">Starting From</p>
-                <p className="text-xl font-semibold text-[#062416]">
-                  ৳ {service.cost?.[index]}
-                </p>
-              </div>
-
-              <Link
-                to="/booking"
-                state={{
-                  serviceTitle: service.serviceTitle,
-                  serviceId: service.serviceId[index],
-                  cost: service.cost[index],
-                  image: service.images[index],
-                }}
-              >
-                <button className="bg-yellow-500 text-black px-5 py-2 rounded-lg">
-                  Booking Now
-                </button>
-              </Link>
-            </div>
+        <div className="p-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div>
+            <p className="text-sm text-gray-500">Starting From</p>
+            <p className="text-3xl font-bold text-[#062416]">
+              BDT {service.cost}
+            </p>
           </div>
-        ))}
+
+          <Link
+            to="/booking"
+            state={{
+              serviceTitle: service.serviceTitle,
+              serviceId: _id,
+              cost: service.cost,
+              image: service.images,
+            }}
+          >
+            <button className="bg-yellow-500 hover:bg-yellow-600 text-black font-medium px-8 py-3 rounded-lg transition">
+              Booking Now
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );

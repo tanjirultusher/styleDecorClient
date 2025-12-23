@@ -93,7 +93,7 @@ const Footer = () => {
       </div>
 
       <div className="text-center text-sm text-gray-500 mt-10 border-t border-green-900 pt-4">
-        © {new Date().getFullYear()} Event Time Ltd. All rights reserved.
+        © {new Date().getFullYear()} All rights reserved.
       </div>
     </footer>
   );

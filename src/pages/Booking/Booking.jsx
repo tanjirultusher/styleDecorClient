@@ -3,6 +3,7 @@ import { useLoaderData, useLocation } from "react-router";
 import useAuth from "../../hooks/useAuth";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Loading from "../../components/Loading";
+import Swal from "sweetalert2";
 
 const Booking = () => {
   const { user } = useAuth();
@@ -23,44 +24,13 @@ const Booking = () => {
   const { serviceTitle, serviceId, cost, image } = location.state || {};
 
   const [eventDate, setEventDate] = useState("");
-  const [timeSlot, setTimeSlot] = useState("");
-  const [mode, setMode] = useState("in-studio");
-  const [address, setAddress] = useState("");
   const [region, setRegion] = useState("");
   const [district, setDistrict] = useState("");
+  const [address, setAddress] = useState("");
 
   if (!serviceId) {
     return <Loading />;
   }
-
-  const generateTimeSlots = () => {
-    const slots = [];
-    let start = new Date();
-    start.setHours(11, 0, 0, 0);
-
-    const end = new Date();
-    end.setHours(18, 0, 0, 0);
-
-    while (start < end) {
-      const slotStart = new Date(start);
-      const slotEnd = new Date(start);
-      slotEnd.setMinutes(slotEnd.getMinutes() + 40);
-
-      if (slotEnd > end) break;
-
-      const formatTime = (date) =>
-        date.toLocaleTimeString("en-US", {
-          hour: "2-digit",
-          minute: "2-digit",
-        });
-
-      slots.push(`${formatTime(slotStart)} - ${formatTime(slotEnd)}`);
-
-      start.setMinutes(start.getMinutes() + 50);
-    }
-
-    return slots;
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -76,30 +46,45 @@ const Booking = () => {
       designImage: image,
 
       eventDate,
-      timeSlot,
-      mode,
       region,
       district,
-      location:
-        mode === "on-site"
-          ? {
-              addressLine: address,
-              region,
-              district,
-            }
-          : {
-              region,
-              district,
-            },
+      location: {
+        addressLine: address,
+        region,
+        district,
+      },
     };
-
     try {
       const res = await axiosSecure.post("/bookings", bookingData);
       console.log(res.data);
-      alert("Booking successful!");
+      Swal.fire({
+        title: "Success!",
+        text: "Your booking has been successfully completed!",
+        icon: "success",
+        confirmButtonText: "OK",
+        confirmButtonColor: "#28a745",
+        timer: 3000,
+        timerProgressBar: true,
+        showClass: {
+          popup: "animate__animated animate__fadeInDown",
+        },
+        hideClass: {
+          popup: "animate__animated animate__fadeOutUp",
+        },
+      });
     } catch (error) {
       console.error(error);
-      alert("Booking failed");
+      Swal.fire({
+        title: "Error!",
+        text:
+          error.response?.data?.message || "Booking failed. Please try again.",
+        icon: "error",
+        confirmButtonText: "OK",
+        confirmButtonColor: "#dc3545",
+        showClass: {
+          popup: "animate__animated animate__shakeX",
+        },
+      });
     }
   };
 
@@ -135,10 +120,10 @@ const Booking = () => {
               <p>
                 <span className="font-semibold">Service ID:</span> {serviceId}
               </p>
-              <p className="text-green-600 font-bold text-lg">Cost: ৳ {cost}</p>
-              <p className="text-sm text-gray-500 break-all">
-                Design Image URL: {image}
+              <p className="text-green-600 font-bold text-lg">
+                Cost: Bdt {cost}
               </p>
+              <p className="text-sm text-gray-500 break-all"></p>
             </div>
 
             <div className="mt-4 grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -151,35 +136,6 @@ const Booking = () => {
                   className="input input-bordered w-full"
                   required
                 />
-              </div>
-
-              <div>
-                <select
-                  value={timeSlot}
-                  onChange={(e) => setTimeSlot(e.target.value)}
-                  className="select select-bordered w-full"
-                  required
-                >
-                  <option value="" disabled>
-                    Select Time Slot
-                  </option>
-                  {generateTimeSlots().map((slot, index) => (
-                    <option key={index} value={slot}>
-                      {slot}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <select
-                  value={mode}
-                  onChange={(e) => setMode(e.target.value)}
-                  className="select select-bordered w-full"
-                >
-                  <option value="in-studio">In Studio</option>
-                  <option value="on-site">On Site</option>
-                </select>
               </div>
 
               <div>
@@ -212,9 +168,7 @@ const Booking = () => {
                   disabled={!region || !eventDate}
                 >
                   <option value="" disabled>
-                    { !region
-                      ? "First select a Region"
-                      : "Select District"}
+                    {!region ? "First select a Region" : "Select District"}
                   </option>
                   {region &&
                     eventDate &&
@@ -226,17 +180,15 @@ const Booking = () => {
                 </select>
               </div>
 
-              {mode === "on-site" && (
-                <div className="lg:col-span-2">
-                  <textarea
-                    placeholder="Detailed Service Location Address"
-                    value={address}
-                    onChange={(e) => setAddress(e.target.value)}
-                    className="textarea textarea-bordered w-full"
-                    required
-                  />
-                </div>
-              )}
+              <div className="lg:col-span-2">
+                <textarea
+                  placeholder="Detailed Service Location Address"
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
+                  className="textarea textarea-bordered w-full"
+                  required
+                />
+              </div>
             </div>
 
             <div className="card-actions justify-end mt-6">

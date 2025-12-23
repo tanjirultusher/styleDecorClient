@@ -25,6 +25,8 @@ import DecoratorEarningSummary from "../pages/Dashboard/DecoratorEarningSummary/
 import Home from "../pages/Home/Home/Home";
 import AddService from "../pages/Dashboard/AddService/AddService";
 import GlobalErrorPage from "../pages/shared/GlobalErrorPage";
+import Consultation from "../pages/Booking/Consultation";
+import Appointments from "../pages/Dashboard/Appointments/Appointments";
 
 
 export const router = createBrowserRouter([
@@ -62,6 +64,10 @@ export const router = createBrowserRouter([
       {
         path: '*',
         element: <GlobalErrorPage></GlobalErrorPage>
+      },
+      {
+        path: "/consultation",
+        element: <PrivateRoute><Consultation></Consultation></PrivateRoute>,
       }
     ]
     
@@ -103,6 +109,10 @@ export const router = createBrowserRouter([
       {
         path: 'approve-decorators',
         element: <AdminRoute><ApproveDecorators></ApproveDecorators></AdminRoute>
+      },
+      {
+        path: 'appointments',
+        element: <AdminRoute><Appointments></Appointments></AdminRoute>
       },
       {
         path: 'assign-decorators',

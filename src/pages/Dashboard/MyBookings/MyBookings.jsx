@@ -26,7 +26,7 @@ const MyBookings = () => {
       text: "You won't be able to revert this!",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
+      confirmButtonColor: "#28a745",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
@@ -69,7 +69,9 @@ const MyBookings = () => {
 
   return (
     <div className="max-w-7xl mx-auto p-2">
-      <h2 className="text-2xl">All of my bookings : {bookings.length}</h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-[#062416] my-6">
+          All of my bookings : {bookings.length}
+        </h2>
       <div className="overflow-x-auto shadow-lg rounded-xl">
         <table className="table table-zebra w-full text-center">
           <thead className="bg-base-200 text-sm uppercase">
@@ -99,7 +101,7 @@ const MyBookings = () => {
                     <Link to={`/dashboard/payment/${booking._id}`}>
                       <button
                         onClick={() => handlePayment(booking)}
-                        className="btn btn-sm btn-primary text-black"
+                        className="btn btn-sm bg-[#28a745] text-black"
                       >
                         Pay
                       </button>

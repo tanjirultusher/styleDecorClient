@@ -80,7 +80,9 @@ const UsersManagement = () => {
 
   return (
     <div className="max-w-7xl mx-auto p-2">
-      <h2 className="text-2xl">Total Users: {users.length}</h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-[#062416] my-6">
+        Total Users: {users.length}
+      </h2>
       <p>search text: {searchText}</p>
       <label className="input">
         <svg

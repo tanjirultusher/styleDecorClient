@@ -76,7 +76,9 @@ const ApproveDecorators = () => {
 
   return (
     <div className="max-w-7xl mx-auto p-2">
-      <h2 className="text-2xl m-4">Decorators Approval & Availability</h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-[#062416] my-6">
+        Decorators Approval & Management
+      </h2>
       <div className="overflow-x-auto shadow-lg rounded-xl">
         <table className="table table-zebra w-full text-center">
           <thead className="bg-base-200 text-sm uppercase">

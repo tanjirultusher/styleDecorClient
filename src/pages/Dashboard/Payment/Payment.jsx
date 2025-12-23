@@ -15,7 +15,7 @@ const Payment = () => {
       return res.data;
     },
   });
-  console.log('booking info:',booking);
+  console.log("booking info:", booking);
 
   if (isLoading || !booking) {
     return (
@@ -34,8 +34,7 @@ const Payment = () => {
       serviceName: booking.serviceTitle,
       serviceId: booking.serviceId,
     };
-    console.log('paymentInfo:', paymentInfo);
-
+    console.log("paymentInfo:", paymentInfo);
 
     const res = await axiosSecure.post("/create-checkout-session", paymentInfo);
 
@@ -44,15 +43,20 @@ const Payment = () => {
     window.location.href = res.data.url;
   };
 
-
   return (
-    <div>
-      <h2>
-        Please Pay ${booking.cost/100} for : {booking.serviceId}{" "}
-      </h2>
-      <button onClick={handlePayment} className="btn btn-primary text-black">
-        Pay
-      </button>
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
+      <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 text-center">
+        <h2 className="text-3xl font-bold text-gray-800 mb-8">
+          Please Pay ${booking.cost / 100} for: {booking.serviceId}
+        </h2>
+
+        <button
+          onClick={handlePayment}
+          className="w-full py-4 px-6 bg-[#28a745] hover:bg-[#218838] text-black font-semibold text-lg rounded-xl transition duration-200 shadow-lg"
+        >
+          Pay
+        </button>
+      </div>
     </div>
   );
 };
