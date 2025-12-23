@@ -88,7 +88,7 @@ const NavBar = () => {
         <ul>
           <li>
             <NavLink
-              to="/"
+              to="/dashboard/profile"
               className="block px-4 py-2 hover:bg-gray-100 rounded-md font-semibold text-gray-600"
             >
               Profile
