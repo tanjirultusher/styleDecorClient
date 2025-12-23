@@ -1,16 +1,61 @@
-# React + Vite
+# StyleDecor – Decoration Service Appointment System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**StyleDecor** is a modern, full-stack appointment management web application built for a local decoration company. It allows customers to browse decoration packages, book in-studio consultations or on-site services, check decorator availability, make secure payments, and track project status in real-time. The system also provides powerful admin tools for managing decorators, assignments, payments, and business analytics.
 
-Currently, two official plugins are available:
+### Purpose
+Local decoration businesses often struggle with walk-in crowds, long waiting times, manual scheduling, and poor coordination for on-site services. **StyleDecor** solves these problems by offering:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Online booking & smart slot management  
+- Real-time decorator availability & specialty tracking  
+- On-site service assignment workflow  
+- Integrated payment processing  
+- Project status updates for customers  
+- Admin dashboard with analytics and insights  
 
-## React Compiler
+This results in a smoother experience for customers and more efficient operations for the business.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Live URL
+Frontend Live URL: https://style-decor-auth.web.app/
+Bckend URL: https://style-decor-server-bice.vercel.app/
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Key Features
+- **Browse Services & Packages** – View detailed decoration services with images, descriptions, and pricing  
+- **Smart Appointment Booking** – Select date, time, service mode (studio / on-site), and preferred decorator  
+- **Decorator Management** – Admin can add/edit decorators, set availability, and assign specialties  
+- **Payment Integration** – Secure online payment for packages and services  
+- **On-site Service Workflow** – Admin assigns decorator teams; decorators update project progress  
+- **Real-time Status Tracking** – Customers see booking → payment → assignment → in-progress → completed  
+- **Responsive Design** – Fully mobile-friendly UI with Tailwind CSS  
+- **Admin Dashboard** – Analytics, booking overview, revenue charts, and user management  
+- **Authentication** – Firebase-based email/password and social login  
+- **Interactive Elements** – Carousel, animations (Framer Motion), maps (Leaflet), and modals  
+
+### Technology Stack
+- **Frontend**: React, Tailwind CSS  
+- **State Management**: TanStack React Query  
+- **Backend/API**: Custom Express/Node server 
+- **Authentication**: Firebase Authentication  
+- **Payments**: Integrated payment gateway (Stripe)  
+- **Charts & Visualizations**: Recharts  
+- **UI Enhancements**: Swiper, Framer Motion (animations), SweetAlert2 (alerts), React Icons  
+
+### NPM Packages Used
+```json
+"@tailwindcss/vite": "^4.1.17",
+"@tanstack/react-query": "^5.90.12",
+"axios": "^1.13.2",
+"firebase": "^12.6.0",
+"framer-motion": "^12.23.26",
+"leaflet": "^1.9.4",
+"react": "^19.2.0",
+"react-dom": "^19.2.0",
+"react-hook-form": "^7.68.0",
+"react-icons": "^5.5.0",
+"react-leaflet": "^5.0.0-rc.2",
+"react-responsive-carousel": "^3.2.23",
+"react-router": "^7.10.1",
+"recharts": "^3.5.1",
+"sweetalert2": "^11.26.4",
+"swiper": "^12.0.3",
+"tailwindcss": "^4.1.17"
