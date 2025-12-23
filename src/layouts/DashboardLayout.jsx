@@ -1,6 +1,6 @@
 import React from "react";
 import { CiDeliveryTruck } from "react-icons/ci";
-import { FaRegCreditCard, FaUser, FaCalendarCheck } from "react-icons/fa6";
+import { FaRegCreditCard, FaUser, FaCalendarCheck, FaRegChartBar } from "react-icons/fa6";
 import { FaCheckCircle, FaPlus, FaUserPlus } from "react-icons/fa";
 import { MdCalendarToday, MdSchedule, MdAssignment, MdEvent } from "react-icons/md";
 import { Link, NavLink, Outlet } from "react-router";
@@ -169,6 +169,18 @@ const DashboardLayout = () => {
                     <FaUser />
                     <span className="is-drawer-close:hidden">
                       Users Management
+                    </span>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+                    data-tip="Booking Summary Analysis"
+                    to="/dashboard/summary-analysis"
+                  >
+                    <FaRegChartBar />
+                    <span className="is-drawer-close:hidden">
+                      Booking Summary Analysis
                     </span>
                   </NavLink>
                 </li>

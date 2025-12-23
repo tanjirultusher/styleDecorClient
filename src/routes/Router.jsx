@@ -27,6 +27,7 @@ import AddService from "../pages/Dashboard/AddService/AddService";
 import GlobalErrorPage from "../pages/shared/GlobalErrorPage";
 import Consultation from "../pages/Booking/Consultation";
 import Appointments from "../pages/Dashboard/Appointments/Appointments";
+import BookingSummaryAnalysis from "../pages/Dashboard/BookingSummaryAnalysis/BookingSummaryAnalysis";
 
 
 export const router = createBrowserRouter([
@@ -117,6 +118,10 @@ export const router = createBrowserRouter([
       {
         path: 'assign-decorators',
         element: <AdminRoute><AssignDecorators></AssignDecorators></AdminRoute>
+      },
+      {
+        path: 'summary-analysis',
+        element: <AdminRoute><BookingSummaryAnalysis></BookingSummaryAnalysis></AdminRoute>
       },
       {
         path: 'my-bookings',
