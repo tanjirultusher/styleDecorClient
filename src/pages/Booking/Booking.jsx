@@ -194,7 +194,7 @@ const Booking = () => {
             <div className="card-actions justify-end mt-6">
               <button
                 type="submit"
-                className="btn bg-[#062416] text-white hover:bg-[#0a3a25]"
+                className="btn bg-yellow-500 text-white hover:bg-[#062416]"
               >
                 Confirm Booking
               </button>

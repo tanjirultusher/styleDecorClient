@@ -176,7 +176,7 @@ const Consultation = () => {
         <div className="mt-8 text-center">
           <button
             type="submit"
-            className="btn bg-[#062416] text-white hover:bg-[#0a3a25] px-8"
+            className="btn bg-yellow-500 text-white hover:bg-[#0a3a25] px-8"
           >
             Submit Consultation Request
           </button>

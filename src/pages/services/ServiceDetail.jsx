@@ -67,7 +67,7 @@ const ServiceDetail = () => {
               image: service.images,
             }}
           >
-            <button className="bg-yellow-500 hover:bg-yellow-600 text-black font-medium px-8 py-3 rounded-lg transition">
+            <button className="bg-yellow-500 hover:bg-[#062416] text-white font-medium px-8 py-3 rounded-lg transition">
               Booking Now
             </button>
           </Link>
