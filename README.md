@@ -2,6 +2,11 @@
 
 **StyleDecor** is a modern, full-stack appointment management web application built for a local decoration company. It allows customers to browse decoration packages, book in-studio consultations or on-site services, check decorator availability, make secure payments, and track project status in real-time. The system also provides powerful admin tools for managing decorators, assignments, payments, and business analytics.
 
+### Live URL
+Frontend Live URL: https://style-decor-auth.web.app/
+<br>
+Bckend URL: https://style-decor-server-bice.vercel.app/
+
 ### Purpose
 Local decoration businesses often struggle with walk-in crowds, long waiting times, manual scheduling, and poor coordination for on-site services. **StyleDecor** solves these problems by offering:
 
@@ -13,10 +18,6 @@ Local decoration businesses often struggle with walk-in crowds, long waiting tim
 - Admin dashboard with analytics and insights  
 
 This results in a smoother experience for customers and more efficient operations for the business.
-
-### Live URL
-Frontend Live URL: https://style-decor-auth.web.app/
-Bckend URL: https://style-decor-server-bice.vercel.app/
 
 
 ### Key Features
